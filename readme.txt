@@ -12,12 +12,13 @@ Removes the '/blog' slug from the main site permalinks in a multisite.
 
 == Description ==
 
-This plugin removes the '/blog' slug from the main site permalinks in a sub-folder multisite install where "blog" and custom post
-type (cpt) functions are desired without the '/blog' in the permalinks.  The main purpose for this plugin is in multilingual
-installations where the main site is the default language.  These are often business sites where having the '/blog' in the permalink (URL)
-does not make sense.
+This plugin removes the '/blog' slug from the main site permalinks of a sub-folder multisite install. The intended purpose for this plugin
+is for multilingual installations where the main site is the default language (although I'm sure there are other applications).  These sites
+are of often for businesses where having the '/blog' in the permalink (URL) does not make sense.
 
-'/blog' is restored in permalinks upon plugin deactivation.
+'/blog' is automatically removed from the main site permalinks upon plugin activation.
+
+'/blog' is automatically restored in permalinks upon plugin deactivation.
 
 == Installation ==
 
@@ -31,9 +32,6 @@ does not make sense.
 1. Upload r3df-blog-slug-remover.zip to the `/wp-content/plugins/` folder on your web server
 1. Uncompress r3df-multisite-blog-slug-remover.zip (delete r3df-multisite-blog-slug-remover.zip after it's uncompressed)
 1. **Network activate** the plugin through the 'Plugins' menu in Network Admin in WordPress. (The plugin only acts on the main site, and Network activation hides it from the other sites)
-
-
-== Frequently Asked Questions ==
 
 == Changelog ==
 
