@@ -72,9 +72,20 @@ class R3DF_Multisite_Blog_Slug_Remover {
 			// Remove '/blog' from options page display
 			//add_action( 'load-options-permalink.php', array( $this, 'start_options_capture' ) );
 			add_action( 'in_admin_header', array( $this, 'start_options_capture' ) );
+
+			add_filter('rewrite_rules_array', array($this, 'rewrite_blog_rules' ) );
 		}
 	}
 
+	public function rewrite_blog_rules($rules) {
+		foreach ($rules as $rule => $rewrite) {
+			if ( 'blog/' == substr( $rule, 0, 5 ) ) {
+				$rules[substr("$rule", 5)] = $rewrite;
+				unset($rules[$rule]);
+			}
+		}
+		return $rules;
+	}	
 
 	/**
 	 * Get and save permalink options to remove the '/blog' automatically
